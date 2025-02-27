@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.firebase.database)
     implementation(platform(libs.firebase.bom))
+    implementation(libs.androidx.preference.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

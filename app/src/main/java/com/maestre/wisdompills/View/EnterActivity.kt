@@ -1,7 +1,9 @@
 @file:Suppress("DEPRECATION")
 package com.maestre.wisdompills.View
 
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.ContextThemeWrapper
@@ -25,12 +27,12 @@ import com.maestre.wisdompills.databinding.DialogoPersonalizadoBinding
 class EnterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnterBinding
     private lateinit var myAdapter: NoteAdapter
-    private lateinit var sharedPreferences: SharedPreferences
+    //private lateinit var sharedPreferences: SharedPreferences
     private val viewmodel: NoteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Inicializar las preferencias
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        //sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         // Configurar el tema antes de inflar las vistas
         super.onCreate(savedInstanceState)
@@ -134,17 +136,21 @@ class EnterActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_info -> {
-                // Reemplaza el contenido actual con el SettingsFragment
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, SettingsFragment()) // Reemplaza 'container' con el ID de tu contenedor
-                    .addToBackStack(null)
-                    .commit()
-                true
+                val intent = Intent(this, PreferenceActivity::class.java)
+                startActivity(intent)
+                return true
             }
             R.id.menu_search -> {
                 Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
                 true
             }
+            R.id.menu_web -> {
+                val url = "https://laemboscadura.com/?srsltid=AfmBOoqpVfh0w54MG2u5X0Tn2NSE3J_3l4wCY4qqW0tFfmXf8bKntvcd"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+                return true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
