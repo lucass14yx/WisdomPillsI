@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         android:minHeight="?attr/actionBarSize"
@@ -29,8 +29,8 @@
         android:id="@+id/titleEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
         android:hint="@string/hint_title_pill"
         app:layout_constraintBottom_toTopOf="@+id/contentEditText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +41,7 @@
         android:id="@+id/contentEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="1dp"
         android:height="50dp"
         android:hint="@string/hint_pill"
         app:layout_constraintBottom_toTopOf="@+id/notesRecyclerView"
@@ -54,13 +53,12 @@
         android:id="@+id/notesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contentEditText" />
+        app:layout_constraintTop_toBottomOf="@id/contentEditText" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -69,7 +67,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/btn_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,9 +80,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/titleEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,17 +90,18 @@
 
     <Button
         android:id="@+id/btnModify"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="75dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="300dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/btn_show"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesRecyclerView" />
+
 
 
 

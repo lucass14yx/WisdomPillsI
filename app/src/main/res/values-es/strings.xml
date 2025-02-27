@@ -24,5 +24,17 @@
     <string name="text_alert_dia_proceed">¿Está segurx que desea continuar?</string>
     <string name="toast_added_successfully">Píldora añadida</string>
     <string name="toast_cancel_clicked">Ha hecho click en Cancelar</string>
-    <string name="btn_modify">Modificar</string>
+    <string name="btn_show">Mostrar nueva Activity</string>
+    <string name="preference_darkMode">Activar el modo noche</string>
+    <string name="toast_loading">Cargando datos, por favor espera...</string>
+    <string name="toast_fields">Por favor, completa todos los campos</string>
+    <string name="toast_no_users">No se encontraron usuarios registrados</string>
+    <string name="toast_incorrect">Usuario o contraseña incorrectos</string>
+    <string name="web">Página web</string>
+    <string name="about">Acerca de</string>
+    <string name="about_version">Versión 1.0</string>
+    <string name="about_developed">Desarrollado por Lucas Serrano</string>
+    <string name="not_implemented">La busqueda no esta implementada aún</string>
+    <string name="alert_dialog_are_you_sure">¿Estás seguro?</string>
+    <string name="auto_text">Escribe algo</string>
 </resources>

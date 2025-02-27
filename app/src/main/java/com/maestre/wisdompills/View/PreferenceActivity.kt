@@ -12,8 +12,6 @@ class PreferenceActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Aplicar el tema antes de cargar la UI
-        //aplicarModoOscuro()
 
         super.onCreate(savedInstanceState)
         binding = ActivityPreferenceBinding.inflate(layoutInflater)

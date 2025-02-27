@@ -13,7 +13,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.appbar.MaterialToolbar
@@ -21,7 +20,6 @@ import com.maestre.wisdompills.Model.adapter.NoteAdapter
 import com.maestre.wisdompills.R
 import com.maestre.wisdompills.ViewModel.NoteViewModel
 import com.maestre.wisdompills.databinding.ActivityEnterBinding
-import com.maestre.wisdompills.databinding.DialogoPersonalizadoBinding
 
 
 class EnterActivity : AppCompatActivity() {
@@ -81,21 +79,17 @@ class EnterActivity : AppCompatActivity() {
         binding.notesRecyclerView.addItemDecoration(decoration)
     }
     private fun showModifyAlertDialog() {
-        val builder = AlertDialog.Builder(this)
-        val bindingDialog = DialogoPersonalizadoBinding.inflate(layoutInflater)
-        val editText = bindingDialog.editTextData
-        builder.setView(bindingDialog.root)
-            .setPositiveButton(R.string.OK) { dialogInterface, i ->
-                val inputText = editText.text.toString()
-                if (inputText.isEmpty()) {
-                    Toast.makeText(this, R.string.toast_enter_value, Toast.LENGTH_SHORT).show()
-                } else {
-                    // Continuar con la lógica
-                    Toast.makeText(this, "Input: $inputText", Toast.LENGTH_SHORT).show()
-                }// Process the input text
-
+        AlertDialog.Builder(ContextThemeWrapper(this,R.style.CustomAlertDialog))
+            .setTitle(R.string.text_alert_dia_confirmation)
+            .setMessage(R.string.text_alert_dia_proceed)
+            .setPositiveButton(R.string.OK) { dialog, which ->
+                val intent = Intent(this, NewActivity::class.java)
+                startActivity(intent)
             }
-            .setNegativeButton(R.string.Cancel, null)
+            .setNegativeButton(R.string.Cancel) { dialog, which ->
+                // Handle Cancel button click
+                Toast.makeText(this, R.string.toast_cancel_clicked, Toast.LENGTH_SHORT).show()
+            }
             .show()
     }
     private fun showAddAlertDialog(userId: String) {
@@ -139,12 +133,17 @@ class EnterActivity : AppCompatActivity() {
                 return true
             }
             R.id.menu_search -> {
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.not_implemented, Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.menu_web -> {
                 val url = "https://laemboscadura.com/?srsltid=AfmBOoqpVfh0w54MG2u5X0Tn2NSE3J_3l4wCY4qqW0tFfmXf8bKntvcd"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+                return true
+            }
+            R.id.menu_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
                 return true
             }

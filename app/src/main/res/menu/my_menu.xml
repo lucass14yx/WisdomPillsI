@@ -14,11 +14,13 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_web"
-        android:title="menu_web"
+        android:title="@string/web"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_about"
-        android:title="about" />
+        android:title="@string/about"
+        app:showAsAction="never" />
+
 
 
 </menu>

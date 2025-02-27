@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -62,22 +63,26 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSignIn.setOnClickListener {
             if (!isDataLoaded) {
-                Toast.makeText(this, "Cargando datos, por favor espera...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_loading, Toast.LENGTH_SHORT).show()
+                //Logcat de depuración, datos no cargados
+                Log.d("MainActivity", "Datos no cargados")
                 return@setOnClickListener
             }
+            //Logcat de depuración, datos cargados
+            Log.d("MainActivity", "Datos cargados, iniciando sesión...")
 
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_fields, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             val users = viewModel.usersLiveData.value
 
             if (users.isNullOrEmpty()) {
-                Toast.makeText(this, "No se encontraron usuarios registrados", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_no_users, Toast.LENGTH_SHORT).show()
             } else {
                 val user = users.firstOrNull { it.email == email && it.password == password }
                 if (user != null) {
@@ -86,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("name", user.nickname)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_incorrect, Toast.LENGTH_SHORT).show()
                 }
             }
         }

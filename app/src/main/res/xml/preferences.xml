@@ -2,8 +2,8 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
         android:key="pref_checkbox"
-        android:title="Activar modo oscuro"
-        android:summary="Activar el modo oscuro"
+        android:title="@string/preference_darkMode"
+        android:summary="@string/preference_darkMode"
         android:checked="true"/>
 
 
