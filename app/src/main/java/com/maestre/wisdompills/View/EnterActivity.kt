@@ -27,12 +27,10 @@ import com.maestre.wisdompills.databinding.DialogoPersonalizadoBinding
 class EnterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnterBinding
     private lateinit var myAdapter: NoteAdapter
-    //private lateinit var sharedPreferences: SharedPreferences
     private val viewmodel: NoteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Inicializar las preferencias
-        //sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+
 
         // Configurar el tema antes de inflar las vistas
         super.onCreate(savedInstanceState)

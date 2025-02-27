@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         // Inicializar las preferencias
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
         // Configurar el tema antes de inflar las vistas
         setupThemeAndMode()
@@ -40,16 +39,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupThemeAndMode() {
-        // Obtener el tema guardado en SharedPreferences
-//        val themeName = sharedPreferences.getString("pref_themes", "WisdomPillsTheme") ?: "WisdomPillsTheme"
-//        when (themeName) {
-//            "WisdomPillsTheme" -> setTheme(R.style.WisdomPillsTheme)
-//            else -> setTheme(R.style.WisdomPillsTheme) // Tema predeterminado en caso de error
-//        }
 
         // Detectar si el sistema está en modo oscuro o claro
         val isDarkModeEnabled = sharedPreferences?.getBoolean("pref_checkbox", true) ?: true
-        //val isDarkModeEnabled = isSystemInDarkMode()
 
         // Configurar el modo de noche de la app
         if (isDarkModeEnabled) {
@@ -57,19 +49,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
-
-        // Guardar el estado en SharedPreferences
-        //sharedPreferences.edit().putBoolean("def_nightmode", isDarkModeEnabled).apply()
     }
-
-//    /**
-//     * Método para determinar si el sistema está en modo oscuro
-//     */
-//    private fun isSystemInDarkMode(): Boolean {
-//        val nightModeFlags = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-//        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES
-//    }
-
 
     private fun setupListeners() {
         // Desactivar el botón de inicio de sesión hasta que se carguen los datos
