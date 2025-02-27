@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569153680758",
+    "project_id": "wisdompills-14",
+    "storage_bucket": "wisdompills-14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569153680758:android:3184099f8caebd84a63657",
+        "android_client_info": {
+          "package_name": "com.maestre.wisdompills"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8SCInDKQJ-5xxciRXfr1F9LLkckWXZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
